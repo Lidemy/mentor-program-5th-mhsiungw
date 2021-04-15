@@ -13,7 +13,8 @@
 
 ## Github 端
 8. 送出 `pull request`
-9. 管理者同意 `pull request`
+9. 複製 PR 網址，到學習系統交作業
+10. 管理者同意 `pull request`
 
 ## Local 端
 10. `branch checkout master` 移到 master 分支 
