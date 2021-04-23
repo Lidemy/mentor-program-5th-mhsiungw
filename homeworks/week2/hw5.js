@@ -1,18 +1,17 @@
 function join(arr, concatStr) {
-	let result = '';
-	 for (var i = 0; i < arr.length; i++) {
-	 	if (result) {
-	 		result += concatStr;
-	 	} 
+  let result = '';
+  for (var i = 0; i < arr.length; i++) {
+    if (result) {
+      result += concatStr;
+    }
     result += arr[i];
   }
   return result;
-  
 }
 
 function repeat(str, times) {
   var word = ''	
-  for (i = 1; i <= times; i++){
+  for (var i = 1; i <= times; i++){
   	word += str
   }
   return word
