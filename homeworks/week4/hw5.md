@@ -1,5 +1,5 @@
 ## 請以自己的話解釋 API 是什麼
-API 是一個連接本地端和第三端 Server 的頁面，我們透過 HTTP 的 method 和這個頁面的資料在第三端的 server 允許範圍內互動，像是 get, post 甚至 delete。
+API 是一個連接本地端和第三端 server 的頁面，我們透過 HTTP 的 method 和 API 頁面的資料在第三端的 server 允許範圍內互動，像是 get, post 甚至 delete。舉例來說，我們透過串接 Google 的 API，讓本地端可以向 Google 拿取會員資料，但同時又不會直接更動到 Google 的資料，簡單來說，API 裡的東西就是 Google 複製 Google 資料庫並放在裡面的資料，類似 Google Drive 的頁面。
 
 ## 請找出三個課程沒教的 HTTP status code 並簡單介紹
 1. 202 第三端的 server 已經接受到 request，但會不會處理接受到的 request 尚不確定。

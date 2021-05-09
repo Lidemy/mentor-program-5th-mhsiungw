@@ -1,29 +1,43 @@
 const request = require('request')
 
 const action = process.argv[2]
-const Index3 = process.argv[3]
-const Index4 = process.argv[4]
+const param2 = process.argv[3]
+const param3 = process.argv[4]
+const baseUrl = 'https://lidemy-book-store.herokuapp.com/'
 
 switch (action) {
   case 'list':
     listBooks()
     break
   case 'read':
-    openSpecificBook(Index3)
+    openBook(param2)
     break
   case 'delete':
-    deletebooks(Index3)
+    deletebooks(param2)
     break
   case 'create':
-    addbooks(Index3)
+    addbooks(param2)
     break
   case 'update':
-    updateInfo(Index3, Index4)
+    updateInfo(param2, param3)
 }
 
 function listBooks() {
-  request('https://lidemy-book-store.herokuapp.com/books?_limit=20', (err, req, body) => {
-    const data = JSON.parse(body)
+  request(`${baseUrl}books?_limit=20`, (err, res, body) => {
+    if (res.statusCode >= 400) {
+      console.log('statusCode:', res.statusCode)
+      console.log('發生錯誤')
+      return
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
     for (let i = 0; i < data.length; i++) {
       console.log(data[i].id, data[i].name)
     }
@@ -31,9 +45,21 @@ function listBooks() {
   )
 }
 
-function openSpecificBook(number) {
-  request(`https://lidemy-book-store.herokuapp.com/books/${number}`, (err, req, body) => {
-    const data = JSON.parse(body)
+function openBook(id) {
+  request(`${baseUrl}books/${id}`, (err, res, body) => {
+    if (res.statusCode >= 400) {
+      console.log('statusCode:', res.statusCode)
+      console.log('發生錯誤')
+      return
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
     console.log(data.id, data.name)
   }
   )
@@ -41,29 +67,74 @@ function openSpecificBook(number) {
 
 function addbooks(str) {
   request.post({
-    url: 'https://lidemy-book-store.herokuapp.com/books',
+    url: `${baseUrl}books`,
     form: { name: str }
   }, (err, res, body) => {
-    const data = JSON.parse(body)
-    console.log(`StatusCode:${res.statusCode}\nName:${data.name}\nID:${data.id}`)
+    if (res.statusCode >= 400) {
+      console.log('statusCode:', res.statusCode)
+      console.log('發生錯誤')
+      return
+    }
+
+    if (!str) {
+      console.log('請輸入正確格式的書名')
+      return
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
+    console.log(`StatusCode:${res.statusCode}`)
+    console.log(`Name:${data.name}`)
+    console.log(`ID:${data.id}`)
   }
   )
 }
 
-function deletebooks(whichId) {
-  request.delete(`https://lidemy-book-store.herokuapp.com/books/${whichId}`, (err, res, body) => {
-    console.log('StatusCode:', res.statusCode)
+function deletebooks(id) {
+  request.delete(`${baseUrl}books/${id}`, (err, res, body) => {
+    if (res.statusCode >= 400) {
+      console.log('statusCode:', res.statusCode)
+      console.log('刪除失敗')
+    } else {
+      console.log('statusCode:', res.statusCode)
+      console.log('刪除成功')
+    }
   }
   )
 }
 
-function updateInfo(whichId, newName) {
+function updateInfo(id, newName) {
   request.patch({
-    url: `https://lidemy-book-store.herokuapp.com/books/${whichId}`,
+    url: `${baseUrl}books/${id}`,
     form: { name: newName }
   }, (err, res, body) => {
-    const data = JSON.parse(body)
-    console.log(`StatusCode:${res.statusCode}\nName:${data.name}\nID:${data.id}`)
+    if (res.statusCode >= 400) {
+      console.log('statusCode:', res.statusCode)
+      console.log('發生錯誤')
+      return
+    }
+
+    if (!newName) {
+      console.log('請輸入正確格式的書名')
+      return
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
+    console.log(`StatusCode:${res.statusCode}`)
+    console.log(`Name:${data.name}`)
+    console.log(`ID:${data.id}`)
   }
   )
 }

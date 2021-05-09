@@ -1,14 +1,27 @@
 const request = require('request')
 
-const index2 = process.argv[2]
+const param = process.argv[2]
 
-if (index2) {
-  findCountry(index2)
+if (param) {
+  findCountry(param)
+} else if (!param) {
+  console.log('請輸入欲搜尋的國家名稱')
 }
 
-function findCountry(str) {
-  request(`https://restcountries.eu/rest/v2/name/${str}`, (err, req, body) => {
-    const data = JSON.parse(body)
+function findCountry(name) {
+  request(`https://restcountries.eu/rest/v2/name/${name}`, (err, res, body) => {
+    if (res.statusCode >= 400) {
+      console.log('找不到國家資訊')
+      return
+    }
+
+    let data
+    try {
+      data = JSON.parse(body)
+    } catch (err) {
+      console.log(err)
+    }
+
     for (let i = 0; i < data.length; i++) {
       console.log(
         '============\n' +
