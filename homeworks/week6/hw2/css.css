@@ -1,0 +1,78 @@
+body {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.wrapper {
+	margin: 5% auto;
+	max-width: 645px;
+	background: white;
+	box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+	border-top: solid 8px #fad312;
+	padding: 64px 32px;
+}
+
+.top .active {
+	color: #e74149;
+	margin-top: 22px;
+	margin-bottom: 55px
+}
+
+.top h1 {
+  margin-bottom: 35;
+  font-family: MicrosoftJhengHei;
+  font-size: 36px;
+}
+
+.top .top_content {
+	font-size: 14px;
+}
+
+.middle .middle_ques {
+	margin-bottom: 15px;
+}
+
+.middle .middle_answer {
+	margin-bottom: 50px;
+	border: solid 1px #d0d0d0;
+	font-size: 16px;
+	padding: 8px;
+}
+
+.middle .middle_radio {
+	margin-top: 23px;
+}
+
+.middle .middle_desc {
+	margin-top: 23px;
+	font-family: MicrosoftJhengHei;
+    font-size: 14px;
+}
+
+.middle p {
+	font-family: MicrosoftJhengHei;
+	font-size: 20px;
+}
+
+.required:after {
+	content: '*';
+	color: #e74149;
+	margin-left: 2px;
+}
+
+.middle_submit {
+	background: #fad312;
+	font-size: 15px;
+	padding: 12px 32px;
+	border: none;
+	border-radius: 4px;
+}
+
+footer {
+	background: black;
+	color: #999999 ;
+	font-family: MicrosoftJhengHei;
+    font-size: 13px;
+    text-align: center;
+    padding: 24px 12px;
+}
+
