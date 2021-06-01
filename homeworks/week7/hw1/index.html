@@ -42,11 +42,11 @@
 				<div class='main__question required hide__error'>
 					<p>報名類型</p>
 					<label class='main__checkbox'>
-						<input id='checkbox' type='radio' name='main__radio'> 躺在床上用想像力創作 </input>
+						<input type='radio' name='main__radio' value='躺在床上用想像力創作'> 躺在床上用想像力創作 </input>
 					</label>
 						<br>
 					<label class='main__checkbox'>
-						<input id='checkbox' type='radio' name='main__radio'/> 趴在地上滑手機找現成的 </input>
+						<input type='radio' name='main__radio' value='趴在地上滑手機找現成的'> 趴在地上滑手機找現成的 </input>
 					</label>
 					<div class='main__error hide__error__block'>請勾選報名類型</div>
 				</div>
@@ -78,6 +78,7 @@
 			const elements = document.querySelectorAll('.required')
 			let hasError = true
 			let hasSelected = true
+			let checkboxText = ''
 			for (let element of elements){
 				const inputs = element.querySelectorAll('input[type=text]')
 				for (let input of inputs){
@@ -105,16 +106,24 @@
 					hasSelected = true
 				}
 				
-			}
-
+				if (radios[0].checked){
+					checkboxText = radios[0].value
+				} else if (radios[1].checked) {
+					checkboxText = radios[1].value
+				} else {
+					e.preventDefault()
+					element.classList.remove('hide__error')
+					hasSelected = false
+					}
+				}
 			
-
 			const inputs = document.querySelectorAll('.required input[type=text]')
 			 if(hasError === false && hasSelected === true){
 				let result = `
 				暱稱：${inputs[0].value}, 
 				電子郵件：${inputs[1].value}, 
 				手機號碼：${inputs[2].value},
+				報名類型：${checkboxText},
 				怎麼知道這個活動的：${inputs[3].value}`
 				alert(result)
 			}
