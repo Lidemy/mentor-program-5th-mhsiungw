@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>餐廳網頁</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="./css.css" />
+</head>
+
+<body>
+<nav class='navbar'>
+	<div class='wrapper'>
+		<div class='navbar_title'>
+			Just A Bite!
+		</div>
+		<ul class='navbar_list'>
+			<li><a href='＃'>抽個大獎</a></li>
+			<li><a href='＃'>我要點餐</a></li>
+			<li><a href='＃'>查詢訂單</a></li>
+			<li class='active'><a href='＃'>常見問題</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class='wrapper'>
+	<section class='faq__section'>
+		<h2 class='faq__section__title'>
+			FAQ - 常見問題
+		</h2>
+
+		<div class='faq__section__questions'>
+				<div class='faq__section__question faq__section__hide'>
+					<div class='faq__section__number'>
+						Q1:
+					</div>
+					<div class='faq__section__content'>
+						<h2>線上刷卡如何操作呢？</h2>
+						<p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+					</div>
+				</div>
+				<div class='faq__section__question faq__section__hide'>
+					<div class='faq__section__number'>
+						Q2:
+					</div>
+					<div class='faq__section__content'>
+						<h2>會有人跟我聯繫配送嗎？</h2>
+						<p>
+							排到您的訂單時，配送前一天師傅會先打電話確認時段，
+							<br>
+							如果隔天無法收貨，可以直接在電話中跟師傅溝通時間，
+							<br>
+							我們會盡量配合您的時間，新竹以北（包括頭份、竹南）幾乎都可以配合！
+							<br>
+							中部是週三、六；南部是週三、四、六、日。但師傅開車搬貨很辛苦，
+							<br>
+							週一跟晚上都要休息，無法指定週一跟晚上喔，若需要進一步協助，歡迎私訊給我們！
+						</p>
+					</div>
+				</div>
+				<div class='faq__section__question faq__section__hide'>
+					<div class='faq__section__number'>
+						Q3:
+					</div>
+					<div class='faq__section__content'>
+						<h2>什麼是舒肥︖</h2>
+						<p>
+							舒肥是⼀種以真空精準低溫長時間的烹調⽅式，
+							低溫慢煮的⽅式減少了致癌物質的產⽣，
+							同時也能更完整保留食物的營養，
+							被許多⽶其林星級餐廳所採⽤。
+						</p>
+					</div>
+				</div>
+				<div class='faq__section__question faq__section__hide'>
+					<div class='faq__section__number'>
+						Q4:
+					</div>
+					<div class='faq__section__content'>
+						<h2>舒肥產品保存⽅式︖</h2>
+						<p>
+							冷凍可放半年、冷藏不超過五天。
+						</p>
+					</div>
+				</div>
+				<div class='faq__section__question faq__section__hide'>
+					<div class='faq__section__number'>
+						Q5:
+					</div>
+					<div class='faq__section__content'>
+						<h2>購買舒肥產品後還有需要額外調味嗎︖</h2>
+						<p>不需要，本身已經調味，可直接照說明書步驟進⾏料理。</p>
+					</div>
+				</div>
+		</div>
+	</section>
+</div>
+
+
+<footer>
+	<div class='footer_top'>
+		<div class='wrapper'>
+			<div class='footer_info'>
+				<div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+				<div>訂位專線：02-1314-5566</div>
+				<div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+				<div>email：service@justabite.com.tw</div>
+			</div>
+			<div>
+				<div class='footer_site'>Just A Bite!</div>
+				<div>Facebook / Instagram / Youtube</div>
+			</div>
+		</div>
+	</div>
+	<div class='footer_bottom'>
+	Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有	
+	</div>
+</footer>
+
+<script>
+	document
+		.querySelector('.faq__section__questions')
+		.addEventListener('click', function(e){
+			if(e.target.closest('.faq__section__question')){
+				e.target.closest('.faq__section__question')
+				.classList.toggle('faq__section__hide')
+			}	
+		}
+	)
+
+</script>
+
+</body>
+
+</html>

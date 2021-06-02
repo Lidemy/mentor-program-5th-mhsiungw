@@ -1,0 +1,180 @@
+.navbar {
+	box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+.navbar .wrapper{
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1280px;
+	margin:0 auto;
+	height: 84px;
+	padding: 0px 24px;
+}
+
+.wrapper {
+	padding: 0px 12px;
+}
+
+.navbar .navbar_title {
+	color: #489846;
+	font-size: 36px;
+	font-family: Questrial;
+}
+
+.navbar .navbar_list {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	font-size: 18px;
+}
+
+.navbar .navbar_list li {
+	margin-left: 12px; 
+	border-radius: 8px; 
+	transition: background 0.4s ease-in;
+}
+
+.navbar .navbar_list li.active,
+.navbar .navbar_list li:hover {
+	background: #ff7286;
+}
+
+.navbar .navbar_list li.active a,
+.navbar .navbar_list li:hover a{
+	color: white;
+}
+
+.navbar .navbar_list li a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 12px 24px;
+}
+
+.faq__section {
+	text-align:center;
+	margin-top: 80px;
+}
+
+.faq__section__title {
+	display: inline-block;
+	font-size: 36px;
+	border-left: solid 15px #a3dea2;
+	padding-left: 16px;
+	margin-bottom: 36px: 
+}
+
+.faq__section__questions{
+	max-width: 768px;
+	margin:0 auto;
+}
+
+.faq__section__question {
+	text-align: left;
+	display: flex;
+	padding-bottom: 25px;
+	border-bottom: solid 1px #a6e2c0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.faq__section__question + .faq__section__question {
+	margin-top: 24px;
+}
+
+.faq__section__hide {
+	height: 15px;
+}
+
+.faq__section__number {
+	color: #70b282;
+	font-family: Questrial;
+	font-size: 24px;
+	margin-right: 16px;
+	line-height: 24px;
+}
+
+.faq__section__content h2 {
+	font-size: 18px;
+	margin: 0;
+	font-weight: normal;
+	line-height: 24px;
+}
+
+.faq__section__content p {
+	font-size: 16px;
+	text-align: left;
+}
+
+footer {
+	margin-top: 48px;
+}
+
+.footer_bottom {
+	background: #35564b;
+	color: white;
+	padding: 12px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.footer_top {
+	background: #e8efee;
+	color: #484848;
+	padding: 32px 0px;
+}
+
+.footer_top .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer_site {
+	color: #489846;
+	font-size: 36px;
+	font-family: Questrial;
+}
+
+.footer_info div + div {
+	margin-top: 10px;
+}
+
+.footer_info {
+	margin-right: 16px;
+}
+@media(max-width: 768px) {
+	.navbar .wrapper {
+		height: 120px;
+		flex-direction: column;
+		padding: 0px
+	}
+
+	.navbar .navbar_list {
+		display: flex;
+		width: 100%;
+	}
+
+	.navbar .navbar_title {
+		margin-top: 10px;
+	} 
+
+	.navbar .navbar_list li {
+		flex: 1;
+		margin-left: 0;
+		border-radius: 0;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
